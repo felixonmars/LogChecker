@@ -165,7 +165,7 @@ class LogChecker(object):
         self.check(u"Read mode|抓轨模式|读取模式", r"([^\s]+)", u"Secure|精确模式|可靠Secure|可靠", 40)
         self.check(u"Utilize accurate stream|使用精确流", u"(Yes|No|是|否)", u"Yes|是")
         self.check(u"Defeat audio cache|屏蔽数据缓存|清空音频缓存", u"(Yes|No|是|否)", u"Yes|是", 5, '"Defeat audio cache" should be yes')
-        self.check(u"Make use of C2 pointers|使用Ｃ２纠错|使用\s*C2\s*指示器", u"(Yes|No|是|否)", u"Yes|是", 10, '"C2 pointers were used', reverse = True)
+        self.check(u"Make use of C2 pointers|使用Ｃ２纠错|使用\s*C2\s*指示器|使用\s*C2\s*指针", u"(Yes|No|是|否)", u"Yes|是", 10, '"C2 pointers were used', reverse = True)
         self.check(u"Fill up missing offset samples with silence|用静音填充丢失的偏移采样|用靜音填充抓取中遺失偏移的取樣|用静音填充抓取中丢失偏移的采样", u"(Yes|No|是|否)", u"Yes|是", 5, 'Does not fill up missing offset samples with silence')
         self.check(u"Delete leading and trailing silent blocks|删除开始与结尾的静音部分|去除首尾靜音區塊|去除首尾静音块", u"(Yes|No|是|否)", u"Yes|是", 5, '"Deletes leading and trailing silent blocks', reverse = True)
         self.check(u"Null samples used in CRC calculations|校验和计算中使用空白采样|在CRC\s*计算中使用了空样本", u"(Yes|No|是|否)", u"Yes|是", 15, '"Null samples should be used in CRC calculations')
